@@ -4,12 +4,952 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{makeidx}
 \usepackage{graphicx}
-\usepackage{lmodern}
-\usepackage{kpfonts}
-\usepackage{fourier}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
 \begin{document}
-hola
+\begin{center}
+\textbf{practica 5}
+\end{center}
+joan anthony de la cruz rodriguez
+\section*{pregunta 1}
+Un laboratorio tiene tres máquinas \( A_1 \), \( A_2 \) y \( A_3 \) que producen el 30\%, 25\% y 45\% de los productos, respectivamente. La probabilidad de que un producto esté defectuoso es 2\% si es producido por \( A_1 \), 3\% si es producido por \( A_2 \) y 1\% si es producido por \( A_3 \). Si un producto es seleccionado al azar y se encuentra que es defectuoso, ¿cuál es la probabilidad de que haya sido producido por \( A_2 \)?
+
+\subsection*{Solución}
+\begin{align*}
+P(A_1) &= 0.30 &\\
+P(A_2) &= 0.25 &\\
+P(A_3) &= 0.45 &\\
+P(D|A_1) &= 0.02 &\\
+P(D|A_2) &= 0.03 &\\
+P(D|A_3) &= 0.01 &
+\end{align*}
+
+Queremos encontrar \( P(A_2|D) \), que es la probabilidad de que un producto haya sido producido por \( A_2 \) dado que es defectuoso.
+
+\subsection*{Calculamos \( P(D) \)}
+La probabilidad de que un producto seleccionado al azar sea defectuoso es:
+
+\[
+P(D) = P(D|A_1) \cdot P(A_1) + P(D|A_2) \cdot P(A_2) + P(D|A_3) \cdot P(A_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(D) = (0.02 \cdot 0.30) + (0.03 \cdot 0.25) + (0.01 \cdot 0.45)
+\]
+
+\[
+P(D) = 0.006 + 0.0075 + 0.0045 = 0.018
+\]
+
+\subsection*{ Calculamos \( P(A_2|D) \)}
+
+\[
+P(A_2|D) = \frac{P(D|A_2) \cdot P(A_2)}{P(D)} = \frac{0.03 \cdot 0.25}{0.018}
+\]
+
+\[
+P(A_2|D) = \frac{0.0075}{0.018} \approx 0.4167
+\]
+
+Por lo tanto, la probabilidad de que un producto defectuoso haya sido producido por \( A_2 \) es aproximadamente \( 0.4167 \), o \( 41.67\% \).\\
+
+
+
+
+\section*{pregunta 2}
+Una tienda vende tres marcas de computadoras: \( B_1 \), \( B_2 \) y \( B_3 \). El 40\% de las computadoras vendidas son \( B_1 \), el 35\% son \( B_2 \) y el 25\% son \( B_3 \). Las probabilidades de que una computadora de \( B_1 \), \( B_2 \) y \( B_3 \) necesite reparaciones en su primer año son 0.02, 0.03 y 0.05, respectivamente. Si una computadora comprada en la tienda necesita reparaciones en su primer año, ¿cuál es la probabilidad de que sea de la marca \( B_2 \)?
+
+\subsection*{Solución}
+
+Las probabilidades dadas son:
+\begin{align*}
+P(B_1) &= 0.40 \\
+P(B_2) &= 0.35 \\
+P(B_3) &= 0.25 \\
+P(R|B_1) &= 0.02 \\
+P(R|B_2) &= 0.03 \\
+P(R|B_3) &= 0.05
+\end{align*}
+
+Queremos encontrar la probabilidad de que una computadora sea de la marca \( B_2 \) dado que necesita reparaciones, es decir, \( P(B_2|R) \).
+
+\subsection*{Calculamos \( P(R) \)}
+
+\[
+P(R) = P(R|B_1) \cdot P(B_1) + P(R|B_2) \cdot P(B_2) + P(R|B_3) \cdot P(B_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(R) = (0.02 \cdot 0.40) + (0.03 \cdot 0.35) + (0.05 \cdot 0.25) 
+\]
+
+\[
+P(R) = 0.008 + 0.0105 + 0.0125 = 0.031
+\]
+
+\subsection*{calculamos \( P(B_2|R) \)}
+
+Aplicamos el teorema de Bayes:
+
+\[
+P(B_2|R) = \frac{P(R|B_2) \cdot P(B_2)}{P(R)}
+\]
+
+Sustituyendo los valores:
+
+\[
+P(B_2|R) = \frac{0.03 \cdot 0.35}{0.031}
+\]
+
+\[
+P(B_2|R) = \frac{0.0105}{0.031} \approx 0.3387
+\]
+
+Por lo tanto, la probabilidad de que una computadora que necesita reparaciones sea de la marca \( B_2 \) es aproximadamente \( 0.3387 \), o \( 33.87\% \).
+
+\section*{pregunta 3}
+Una universidad ofrece tres cursos \( C_1 \), \( C_2 \) y \( C_3 \). El 50\% de los estudiantes están inscritos en \( C_1 \), el 30\% en \( C_2 \) y el 20\% en \( C_3 \). La probabilidad de que un estudiante apruebe \( C_1 \) es 0.9, \( C_2 \) es 0.85 y \( C_3 \) es 0.8. Si un estudiante aprobado es seleccionado al azar, ¿cuál es la probabilidad de que haya aprobado \( C_3 \)?
+
+\subsection*{Solución}
+
+Las probabilidades dadas son:
+\begin{align*}
+P(C_1) &= 0.50 \\
+P(C_2) &= 0.30 \\
+P(C_3) &= 0.20 \\
+P(A \mid C_1) &= 0.90 \\
+P(A \mid C_2) &= 0.85 \\
+P(A \mid C_3) &= 0.80
+\end{align*}
+
+Queremos encontrar la probabilidad de que un estudiante que ha aprobado haya estado inscrito en el curso \( C_3 \), es decir, \( P(C_3 \mid A) \).
+
+\subsection*{Calculamos \( P(A) \)}
+
+\[
+P(A) = P(A \mid C_1) \cdot P(C_1) + P(A \mid C_2) \cdot P(C_2) + P(A \mid C_3) \cdot P(C_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(A) = (0.90 \cdot 0.50) + (0.85 \cdot 0.30) + (0.80 \cdot 0.20)
+\]
+
+\[
+P(A) = 0.45 + 0.255 + 0.16 = 0.865
+\]
+
+\subsection*{ Calculamos \( P(C_3 \mid A) \)}
+
+Aplicamos el teorema de Bayes:
+
+\[
+P(C_3 \mid A) = \frac{P(A \mid C_3) \cdot P(C_3)}{P(A)}
+\]
+
+Sustituyendo los valores:
+
+\[
+P(C_3 \mid A) = \frac{0.80 \cdot 0.20}{0.865}
+\]
+
+\[
+P(C_3 \mid A) = \frac{0.16}{0.865} \approx 0.185
+\]
+
+Por lo tanto, la probabilidad de que un estudiante que ha aprobado esté inscrito en el curso \( C_3 \) es aproximadamente \( 0.185 \), o \( 18.5\% \).
+
+\section*{pregunta 4}
+En una fábrica, tres máquinas \( M_1 \), \( M_2 \) y \( M_3 \) producen el 25\%, 35\% y 40\% de los productos, respectivamente. Las probabilidades de que un producto sea defectuoso si es producido por \( M_1 \), \( M_2 \) y \( M_3 \) son 0.01, 0.02 y 0.04, respectivamente. Si se selecciona un producto y se encuentra que es defectuoso, ¿cuál es la probabilidad de que haya sido producido por \( M_3 \)?
+
+\subsection*{Solución}
+
+
+Las probabilidades dadas son:
+\begin{align*}
+P(M_1) &= 0.25 \\
+P(M_2) &= 0.35 \\
+P(M_3) &= 0.40 \\
+P(D \mid M_1) &= 0.01 \\
+P(D \mid M_2) &= 0.02 \\
+P(D \mid M_3) &= 0.04
+\end{align*}
+
+Queremos encontrar la probabilidad de que un producto defectuoso haya sido producido por \( M_3 \), es decir, \( P(M_3 \mid D) \).
+
+\subsection*{Calculamos \( P(D) \)}
+
+\[
+P(D) = P(D \mid M_1) \cdot P(M_1) + P(D \mid M_2) \cdot P(M_2) + P(D \mid M_3) \cdot P(M_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(D) = (0.01 \cdot 0.25) + (0.02 \cdot 0.35) + (0.04 \cdot 0.40)
+\]
+
+\[
+P(D) = 0.0025 + 0.007 + 0.016 = 0.0255
+\]
+
+\subsection*{Calculamos \( P(M_3 \mid D) \)}
+
+Aplicamos el teorema de Bayes:
+
+\[
+P(M_3 \mid D) = \frac{P(D \mid M_3) \cdot P(M_3)}{P(D)}
+\]
+
+Sustituyendo los valores:
+
+\[
+P(M_3 \mid D) = \frac{0.04 \cdot 0.40}{0.0255}
+\]
+
+\[
+P(M_3 \mid D) = \frac{0.016}{0.0255} \approx 0.627
+\]
+
+Por lo tanto, la probabilidad de que un producto defectuoso haya sido producido por \( M_3 \) es aproximadamente \( 0.627 \), o \( 62.7\% \).
+
+\section*{problema 5}
+En una ciudad, el 60\% de los hogares tienen televisión por cable. De estos, el 70\% tienen acceso a un canal deportivo. De los hogares que no tienen televisión por cable, solo el 20\% tienen acceso a un canal deportivo. Si se selecciona un hogar al azar y se sabe que tiene acceso a un canal deportivo, ¿cuál es la probabilidad de que tenga televisión por cable?
+
+\subsection*{Solución}
+
+
+Las probabilidades dadas son:
+\begin{align*}
+P(C) &= 0.60 \\
+P(C') &= 0.40 \\
+P(D \mid C) &= 0.70 \\
+P(D \mid C') &= 0.20
+\end{align*}
+
+Queremos encontrar la probabilidad de que un hogar que tiene acceso a un canal deportivo también tenga televisión por cable, es decir, \( P(C \mid D) \).
+
+\subsection*{ Calcular \( P(D) \)}
+
+\[
+P(D) = P(D \mid C) \cdot P(C) + P(D \mid C') \cdot P(C')
+\]
+
+Sustituyendo los valores:
+
+\[
+P(D) = (0.70 \cdot 0.60) + (0.20 \cdot 0.40)
+\]
+
+\[
+P(D) = 0.42 + 0.08 = 0.50
+\]
+
+\subsection*{ Calcular \( P(C \mid D) \)}
+
+Aplicamos el teorema de Bayes:
+
+\[
+P(C \mid D) = \frac{P(D \mid C) \cdot P(C)}{P(D)}
+\]
+
+Sustituyendo los valores:
+
+\[
+P(C \mid D) = \frac{0.70 \cdot 0.60}{0.50}
+\]
+
+\[
+P(C \mid D) = \frac{0.42}{0.50} = 0.84
+\]
+
+Por lo tanto, la probabilidad de que un hogar que tiene acceso a un canal deportivo también tenga televisión por cable es \( 0.84 \), o \( 84\% \).
+\section*{pregunta 6}
+
+En una compañía de seguros, el 30\% de los clientes tienen un seguro de auto, el 50\% tienen un seguro de hogar y el 20\% tienen ambos seguros. Si un cliente tiene un seguro de auto, la probabilidad de que reclame en un año es 0.1, mientras que para un seguro de hogar es 0.05. Si se selecciona un cliente que ha hecho una reclamación, ¿cuál es la probabilidad de que tenga ambos seguros?
+
+\subsection*{Solución}
+
+Definamos los siguientes eventos:
+\begin{itemize}
+    \item \( A \): El cliente tiene un seguro de auto.
+    \item \( H \): El cliente tiene un seguro de hogar.
+    \item \( R \): El cliente hace una reclamación.
+\end{itemize}
+
+Las probabilidades dadas son:
+\begin{align*}
+P(A) &= 0.30 \\
+P(H) &= 0.50 \\
+P(A \cap H) &= 0.20 \\
+P(R \mid A) &= 0.10 \\
+P(R \mid H) &= 0.05
+\end{align*}
+
+Queremos encontrar la probabilidad de que un cliente que ha hecho una reclamación tenga ambos seguros, es decir, \( P(A \cap H \mid R) \).
+
+\subsection*{ Calculamos \( P(R) \)}
+
+\[
+P(R) = P(R \mid A \cap H) \cdot P(A \cap H) + P(R \mid A \cap H') \cdot P(A \cap H') + P(R \mid A' \cap H) \cdot P(A' \cap H)
+\]
+
+Donde:
+\[
+P(R \mid A \cap H) = 1 - (1 - 0.10) \times (1 - 0.05) = 1 - 0.90 \times 0.95 = 0.145
+\]
+\[
+P(R \mid A \cap H') = 0.10, \quad P(A \cap H') = 0.30 - 0.20 = 0.10
+\]
+\[
+P(R \mid A' \cap H) = 0.05, \quad P(A' \cap H) = 0.50 - 0.20 = 0.30
+\]
+
+\[
+P(R) = 0.145 \times 0.20 + 0.10 \times 0.10 + 0.05 \times 0.30 = 0.029 + 0.01 + 0.015 = 0.054
+\]
+
+\subsection*{Calculamos \( P(A \cap H \mid R) \)}
+
+Aplicamos el teorema de Bayes:
+
+\[
+P(A \cap H \mid R) = \frac{P(R \mid A \cap H) \cdot P(A \cap H)}{P(R)}
+\]
+
+Sustituyendo los valores:
+
+\[
+P(A \cap H \mid R) = \frac{0.145 \times 0.20}{0.054} = \frac{0.029}{0.054} \approx 0.537
+\]
+
+Por lo tanto, la probabilidad de que un cliente que ha hecho una reclamación tenga ambos seguros es aproximadamente \( 0.537 \), o \( 53.7\% \).
+
+\section*{problema 7}
+Un hospital tiene tres médicos \( D_1 \), \( D_2 \) y \( D_3 \). El médico \( D_1 \) atiende al 50\% de los pacientes, \( D_2 \) atiende al 30\% y \( D_3 \) atiende al 20\%. La probabilidad de que un paciente sea curado es 0.8 si es atendido por \( D_1 \), 0.9 si es atendido por \( D_2 \) y 0.95 si es atendido por \( D_3 \). Si un paciente se cura, ¿cuál es la probabilidad de que haya sido atendido por \( D_2 \)?
+
+\subsection*{Solución}
+
+Definamos los siguientes eventos:
+\begin{itemize}
+    \item \( D_1 \): El paciente es atendido por el médico \( D_1 \).
+    \item \( D_2 \): El paciente es atendido por el médico \( D_2 \).
+    \item \( D_3 \): El paciente es atendido por el médico \( D_3 \).
+    \item \( C \): El paciente se cura.
+\end{itemize}
+
+Las probabilidades dadas son:
+\begin{align*}
+P(D_1) &= 0.50 \\
+P(D_2) &= 0.30 \\
+P(D_3) &= 0.20 \\
+P(C \mid D_1) &= 0.80 \\
+P(C \mid D_2) &= 0.90 \\
+P(C \mid D_3) &= 0.95
+\end{align*}
+
+Queremos encontrar la probabilidad de que un paciente que se curó haya sido atendido por \( D_2 \), es decir, \( P(D_2 \mid C) \).
+
+\subsection*{Calculamos \( P(C) \)}
+
+\[
+P(C) = P(C \mid D_1) \cdot P(D_1) + P(C \mid D_2) \cdot P(D_2) + P(C \mid D_3) \cdot P(D_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(C) = (0.80 \cdot 0.50) + (0.90 \cdot 0.30) + (0.95 \cdot 0.20) = 0.40 + 0.27 + 0.19 = 0.86
+\]
+
+\subsection*{Calculamod \( P(D_2 \mid C) \)}
+
+Aplicamos el teorema de Bayes:
+
+\[
+P(D_2 \mid C) = \frac{P(C \mid D_2) \cdot P(D_2)}{P(C)}
+\]
+
+Sustituyendo los valores:
+
+\[
+P(D_2 \mid C) = \frac{0.90 \cdot 0.30}{0.86} = \frac{0.27}{0.86} \approx 0.314
+\]
+
+Por lo tanto, la probabilidad de que un paciente que se curó haya sido atendido por \( D_2 \) es aproximadamente \( 0.314 \), o \( 31.4\% \).
+
+\section*{problema 8}
+Un banco tiene tres sucursales \( S_1 \), \( S_2 \) y \( S_3 \) que procesan el 40\%, 35\% y 25\% de las transacciones, respectivamente. La probabilidad de que una transacción sea incorrecta es 0.005 en \( S_1 \), 0.01 en \( S_2 \) y 0.02 en \( S_3 \). Si una transacción incorrecta es seleccionada al azar, ¿cuál es la probabilidad de que haya sido procesada en \( S_3 \)?
+
+\subsection*{Solución}
+
+Definamos los siguientes eventos:
+\begin{itemize}
+    \item \( S_1 \): La transacción es procesada en la sucursal \( S_1 \).
+    \item \( S_2 \): La transacción es procesada en la sucursal \( S_2 \).
+    \item \( S_3 \): La transacción es procesada en la sucursal \( S_3 \).
+    \item \( I \): La transacción es incorrecta.
+\end{itemize}
+
+Las probabilidades dadas son:
+\begin{align*}
+P(S_1) &= 0.40 \\
+P(S_2) &= 0.35 \\
+P(S_3) &= 0.25 \\
+P(I \mid S_1) &= 0.005 \\
+P(I \mid S_2) &= 0.01 \\
+P(I \mid S_3) &= 0.02
+\end{align*}
+
+Queremos encontrar la probabilidad de que una transacción incorrecta seleccionada al azar haya sido procesada en \( S_3 \), es decir, \( P(S_3 \mid I) \).
+
+\subsection*{Calculamos \( P(I) \)}
+
+\[
+P(I) = P(I \mid S_1) \cdot P(S_1) + P(I \mid S_2) \cdot P(S_2) + P(I \mid S_3) \cdot P(S_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(I) = (0.005 \cdot 0.40) + (0.01 \cdot 0.35) + (0.02 \cdot 0.25) = 0.002 + 0.0035 + 0.005 = 0.0105
+\]
+
+\subsection*{ Calculamos \( P(S_3 \mid I) \)}
+
+Aplicamos el teorema de Bayes:
+
+\[
+P(S_3 \mid I) = \frac{P(I \mid S_3) \cdot P(S_3)}{P(I)}
+\]
+
+Sustituyendo los valores:
+
+\[
+P(S_3 \mid I) = \frac{0.02 \cdot 0.25}{0.0105} = \frac{0.005}{0.0105} \approx 0.476
+\]
+
+Por lo tanto, la probabilidad de que una transacción incorrecta seleccionada al azar haya sido procesada en \( S_3 \) es aproximadamente \( 0.476 \), o \( 47.6\% \).
+
+\section*{problema 9}
+Un aeropuerto tiene tres pistas de aterrizaje \( P_1 \), \( P_2 \) y \( P_3 \). La probabilidad de que un avión aterrice en \( P_1 \) es 0.4, en \( P_2 \) es 0.3 y en \( P_3 \) es 0.3. La probabilidad de que un avión aterrice de manera segura es 0.99 en \( P_1 \), 0.98 en \( P_2 \) y 0.97 en \( P_3 \). Si se selecciona un aterrizaje seguro, ¿cuál es la probabilidad de que haya sido en \( P_2 \)?
+
+\subsection*{Solución}
+
+Definamos los siguientes eventos:
+\begin{itemize}
+    \item \( P_1 \): El avión aterriza en la pista \( P_1 \).
+    \item \( P_2 \): El avión aterriza en la pista \( P_2 \).
+    \item \( P_3 \): El avión aterriza en la pista \( P_3 \).
+    \item \( S \): El avión aterriza de manera segura.
+\end{itemize}
+
+Las probabilidades dadas son:
+\begin{align*}
+P(P_1) &= 0.40 \\
+P(P_2) &= 0.30 \\
+P(P_3) &= 0.30 \\
+P(S \mid P_1) &= 0.99 \\
+P(S \mid P_2) &= 0.98 \\
+P(S \mid P_3) &= 0.97
+\end{align*}
+
+Queremos encontrar la probabilidad de que un aterrizaje seguro seleccionado al azar haya sido en \( P_2 \), es decir, \( P(P_2 \mid S) \).
+
+\subsection*{ Calculamos \( P(S) \)}
+
+\[
+P(S) = P(S \mid P_1) \cdot P(P_1) + P(S \mid P_2) \cdot P(P_2) + P(S \mid P_3) \cdot P(P_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(S) = (0.99 \cdot 0.40) + (0.98 \cdot 0.30) + (0.97 \cdot 0.30) = 0.396 + 0.294 + 0.291 = 0.981
+\]
+
+\subsection*{ Calculamos \( P(P_2 \mid S) \)}
+
+Aplicamos el teorema de Bayes:
+
+\[
+P(P_2 \mid S) = \frac{P(S \mid P_2) \cdot P(P_2)}{P(S)}
+\]
+
+Sustituyendo los valores:
+
+\[
+P(P_2 \mid S) = \frac{0.98 \cdot 0.30}{0.981} = \frac{0.294}{0.981} \approx 0.2997
+\]
+
+Por lo tanto, la probabilidad de que un aterrizaje seguro seleccionado al azar haya sido en \( P_2 \) es aproximadamente \( 0.2997 \), o \( 29.97\% \).
+
+\section*{problema 10}
+Una empresa tiene tres fábricas \( F_1 \), \( F_2 \) y \( F_3 \) que producen el 20\%, 30\% y 50\% de los productos, respectivamente. Las probabilidades de que un producto sea defectuoso si es producido por \( F_1 \), \( F_2 \) y \( F_3 \) son 0.03, 0.02 y 0.01, respectivamente. Si se selecciona un producto defectuoso, ¿cuál es la probabilidad de que haya sido producido por \( F_1 \)?
+
+\subsection*{Solución}
+
+Definamos los siguientes eventos:
+\begin{itemize}
+    \item \( F_1 \): El producto fue producido por la fábrica \( F_1 \).
+    \item \( F_2 \): El producto fue producido por la fábrica \( F_2 \).
+    \item \( F_3 \): El producto fue producido por la fábrica \( F_3 \).
+    \item \( D \): El producto es defectuoso.
+\end{itemize}
+
+Las probabilidades dadas son:
+\begin{align*}
+P(F_1) &= 0.20 \\
+P(F_2) &= 0.30 \\
+P(F_3) &= 0.50 \\
+P(D \mid F_1) &= 0.03 \\
+P(D \mid F_2) &= 0.02 \\
+P(D \mid F_3) &= 0.01
+\end{align*}
+
+Queremos encontrar la probabilidad de que un producto defectuoso seleccionado al azar haya sido producido por \( F_1 \), es decir, \( P(F_1 \mid D) \).
+
+\subsection*{Calculamos \( P(D) \)}
+
+\[
+P(D) = P(D \mid F_1) \cdot P(F_1) + P(D \mid F_2) \cdot P(F_2) + P(D \mid F_3) \cdot P(F_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(D) = (0.03 \cdot 0.20) + (0.02 \cdot 0.30) + (0.01 \cdot 0.50) = 0.006 + 0.006 + 0.005 = 0.017
+\]
+
+\subsection*{Calculamos \( P(F_1 \mid D) \)}
+
+Aplicamos el teorema de Bayes:
+
+\[
+P(F_1 \mid D) = \frac{P(D \mid F_1) \cdot P(F_1)}{P(D)}
+\]
+
+Sustituyendo los valores:
+
+\[
+P(F_1 \mid D) = \frac{0.03 \cdot 0.20}{0.017} = \frac{0.006}{0.017} \approx 0.353
+\]
+
+Por lo tanto, la probabilidad de que un producto defectuoso seleccionado al azar haya sido producido por \( F_1 \) es aproximadamente \( 0.353 \), o \( 35.3\% \).
+
+\section*{problema 11}
+Una universidad tiene tres departamentos \( D_1 \), \( D_2 \) y \( D_3 \). El 30 \% de los estudiantes están en \( D_1 \), el 50 \% en \( D_2 \) y el 20 \% en \( D_3 \). La probabilidad de que un estudiante obtenga una beca es 0.1 en \( D_1 \), 0.2 en \( D_2 \) y 0.3 en \( D_3 \). Si un estudiante obtiene una beca, se pide calcular la probabilidad de que pertenezca a \( D_2 \).
+
+\subsection*{Solución}
+
+\begin{itemize}
+    \item \( P(D_1) = 0.3 \)
+    \item \( P(D_2) = 0.5 \)
+    \item \( P(D_3) = 0.2 \)
+    \item \( P(B \mid D_1) = 0.1 \)
+    \item \( P(B \mid D_2) = 0.2 \)
+    \item \( P(B \mid D_3) = 0.3 \)
+\end{itemize}
+
+Queremos encontrar \( P(D_2 \mid B) \), que se calcula utilizando el teorema de Bayes:
+
+\[
+P(D_2 \mid B) = \frac{P(B \mid D_2) \cdot P(D_2)}{P(B)}
+\]
+
+Donde \( P(B) \) es:
+
+\[
+P(B) = P(B \mid D_1) \cdot P(D_1) + P(B \mid D_2) \cdot P(D_2) + P(B \mid D_3) \cdot P(D_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(B) = (0.1 \cdot 0.3) + (0.2 \cdot 0.5) + (0.3 \cdot 0.2) = 0.03 + 0.1 + 0.06 = 0.19
+\]
+
+Ahora, calculamos \( P(D_2 \mid B) \):
+
+\[
+P(D_2 \mid B) = \frac{0.2 \cdot 0.5}{0.19} = \frac{0.1}{0.19} \approx 0.5263
+\]
+
+Por lo tanto, la probabilidad de que un estudiante que ha obtenido una beca pertenezca a \( D_2 \) es aproximadamente \( 0.5263 \), o 52.63\%.
+
+\newpage 
+\section*{pregunta 12}
+Un supermercado tiene tres cajas registradoras \( R_1 \), \( R_2 \) y \( R_3 \) que procesan el 30 \%, 40 \% y 30 \% de las compras, respectivamente. La probabilidad de que haya un error en el registro es 0.002 en \( R_1 \), 0.003 en \( R_2 \) y 0.005 en \( R_3 \). Se pide calcular la probabilidad de que un error en una transacción haya ocurrido en \( R_3 \), dado que se encontró un error.
+
+\subsection*{Solución}
+
+\begin{itemize}
+    \item \( P(R_1) = 0.30 \)
+    \item \( P(R_2) = 0.40 \)
+    \item \( P(R_3) = 0.30 \)
+    \item \( P(E \mid R_1) = 0.002 \)
+    \item \( P(E \mid R_2) = 0.003 \)
+    \item \( P(E \mid R_3) = 0.005 \)
+\end{itemize}
+
+Queremos encontrar \( P(R_3 \mid E) \), que se calcula utilizando el teorema de Bayes:
+
+\[
+P(R_3 \mid E) = \frac{P(E \mid R_3) \cdot P(R_3)}{P(E)}
+\]
+
+Donde \( P(E) \) es:
+
+\[
+P(E) = P(E \mid R_1) \cdot P(R_1) + P(E \mid R_2) \cdot P(R_2) + P(E \mid R_3) \cdot P(R_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(E) = (0.002 \cdot 0.30) + (0.003 \cdot 0.40) + (0.005 \cdot 0.30) = 0.0006 + 0.0012 + 0.0015 = 0.0033
+\]
+
+Ahora, calculamos \( P(R_3 \mid E) \):
+
+\[
+P(R_3 \mid E) = \frac{0.005 \cdot 0.30}{0.0033} = \frac{0.0015}{0.0033} \approx 0.4545
+\]
+
+Por lo tanto, la probabilidad de que un error en una transacción haya ocurrido en la caja registradora \( R_3 \) es aproximadamente \( 0.4545 \), o 45.45\%.
+
+\newpage 
+\section*{problema 13}
+En una fábrica, tres máquinas \( M_1 \), \( M_2 \) y \( M_3 \) producen el 20 \%, 30 \% y 50 \% de los productos, respectivamente. La probabilidad de que un producto sea defectuoso es 0.01 si es producido por \( M_1 \), 0.02 si es producido por \( M_2 \) y 0.03 si es producido por \( M_3 \). Si se selecciona un producto defectuoso, se pide calcular la probabilidad de que haya sido producido por \( M_2 \).
+
+\subsection*{Solución}
+
+\begin{itemize}
+    \item \( P(M_1) = 0.20 \)
+    \item \( P(M_2) = 0.30 \)
+    \item \( P(M_3) = 0.50 \)
+    \item \( P(D \mid M_1) = 0.01 \)
+    \item \( P(D \mid M_2) = 0.02 \)
+    \item \( P(D \mid M_3) = 0.03 \)
+\end{itemize}
+
+Queremos encontrar \( P(M_2 \mid D) \), que se calcula utilizando el teorema de Bayes:
+
+\[
+P(M_2 \mid D) = \frac{P(D \mid M_2) \cdot P(M_2)}{P(D)}
+\]
+
+Donde \( P(D) \) es:
+
+\[
+P(D) = P(D \mid M_1) \cdot P(M_1) + P(D \mid M_2) \cdot P(M_2) + P(D \mid M_3) \cdot P(M_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(D) = (0.01 \cdot 0.20) + (0.02 \cdot 0.30) + (0.03 \cdot 0.50) = 0.002 + 0.006 + 0.015 = 0.023
+\]
+
+Ahora, calculamos \( P(M_2 \mid D) \):
+
+\[
+P(M_2 \mid D) = \frac{0.02 \cdot 0.30}{0.023} = \frac{0.006}{0.023} \approx 0.2609
+\]
+
+Por lo tanto, la probabilidad de que un producto defectuoso haya sido producido por \( M_2 \) es aproximadamente \( 0.2609 \), o 26.09\%.
+
+\newpage 
+\section*{problema 14}
+Un hospital tiene tres departamentos \( D_1 \), \( D_2 \) y \( D_3 \). El 40 \% de los pacientes son tratados en \( D_1 \), el 35 \% en \( D_2 \) y el 25 \% en \( D_3 \). La probabilidad de que un paciente se recupere es 0.8 en \( D_1 \), 0.85 en \( D_2 \) y 0.9 en \( D_3 \). Se pide calcular la probabilidad de que un paciente que se ha recuperado haya sido tratado en \( D_3 \).
+
+\subsection*{Solución}
+
+\begin{itemize}
+    \item \( P(D_1) = 0.40 \)
+    \item \( P(D_2) = 0.35 \)
+    \item \( P(D_3) = 0.25 \)
+    \item \( P(R \mid D_1) = 0.80 \)
+    \item \( P(R \mid D_2) = 0.85 \)
+    \item \( P(R \mid D_3) = 0.90 \)
+\end{itemize}
+
+Queremos encontrar \( P(D_3 \mid R) \), que se calcula utilizando el teorema de Bayes:
+
+\[
+P(D_3 \mid R) = \frac{P(R \mid D_3) \cdot P(D_3)}{P(R)}
+\]
+
+Donde \( P(R) \) es:
+
+\[
+P(R) = P(R \mid D_1) \cdot P(D_1) + P(R \mid D_2) \cdot P(D_2) + P(R \mid D_3) \cdot P(D_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(R) = (0.80 \cdot 0.40) + (0.85 \cdot 0.35) + (0.90 \cdot 0.25) = 0.32 + 0.2975 + 0.225 = 0.8445
+\]
+
+Ahora, calculamos \( P(D_3 \mid R) \):
+
+\[
+P(D_3 \mid R) = \frac{0.90 \cdot 0.25}{0.8445} = \frac{0.225}{0.8445} \approx 0.266
+\]
+
+Por lo tanto, la probabilidad de que un paciente que se ha recuperado haya sido tratado en \( D_3 \) es aproximadamente \( 0.266 \), o 26.6\%.
+
+\newpage 
+\section*{problema 15}
+En una ciudad, el 40 \% de las personas compran en la tienda \( T_1 \), el 35 \% en la tienda \( T_2 \) y el 25 \% en la tienda \( T_3 \). La probabilidad de que un cliente esté satisfecho es 0.7 en \( T_1 \), 0.8 en \( T_2 \) y 0.9 en \( T_3 \). Se pide calcular la probabilidad de que un cliente satisfecho haya comprado en \( T_2 \).
+
+\subsection*{Solución}
+
+\begin{itemize}
+    \item \( P(T_1) = 0.40 \)
+    \item \( P(T_2) = 0.35 \)
+    \item \( P(T_3) = 0.25 \)
+    \item \( P(S \mid T_1) = 0.70 \)
+    \item \( P(S \mid T_2) = 0.80 \)
+    \item \( P(S \mid T_3) = 0.90 \)
+\end{itemize}
+
+Queremos encontrar \( P(T_2 \mid S) \), que se calcula utilizando el teorema de Bayes:
+
+\[
+P(T_2 \mid S) = \frac{P(S \mid T_2) \cdot P(T_2)}{P(S)}
+\]
+
+Donde \( P(S) \) es:
+
+\[
+P(S) = P(S \mid T_1) \cdot P(T_1) + P(S \mid T_2) \cdot P(T_2) + P(S \mid T_3) \cdot P(T_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(S) = (0.70 \cdot 0.40) + (0.80 \cdot 0.35) + (0.90 \cdot 0.25) = 0.28 + 0.28 + 0.225 = 0.785
+\]
+
+Ahora, calculamos \( P(T_2 \mid S) \):
+
+\[
+P(T_2 \mid S) = \frac{0.80 \cdot 0.35}{0.785} = \frac{0.28}{0.785} \approx 0.357
+\]
+
+Por lo tanto, la probabilidad de que un cliente satisfecho haya comprado en \( T_2 \) es aproximadamente \( 0.357 \), o 35.7\%.
+
+\newpage 
+\section*{problema 16}
+Una empresa tiene tres proveedores \( P_1 \), \( P_2 \) y \( P_3 \) que suministran el 40 \%, 35 \% y 25 \% de las materias primas, respectivamente. La probabilidad de que una materia prima sea defectuosa es 0.005 si es suministrada por \( P_1 \), 0.01 si es suministrada por \( P_2 \) y 0.02 si es suministrada por \( P_3 \). Se pide calcular la probabilidad de que una materia prima defectuosa haya sido suministrada por \( P_3 \).
+
+\subsection*{Solución}
+
+\begin{itemize}
+    \item \( P(P_1) = 0.40 \)
+    \item \( P(P_2) = 0.35 \)
+    \item \( P(P_3) = 0.25 \)
+    \item \( P(D \mid P_1) = 0.005 \)
+    \item \( P(D \mid P_2) = 0.01 \)
+    \item \( P(D \mid P_3) = 0.02 \)
+\end{itemize}
+
+Queremos encontrar \( P(P_3 \mid D) \), que se calcula utilizando el teorema de Bayes:
+
+\[
+P(P_3 \mid D) = \frac{P(D \mid P_3) \cdot P(P_3)}{P(D)}
+\]
+
+Donde \( P(D) \) es:
+
+\[
+P(D) = P(D \mid P_1) \cdot P(P_1) + P(D \mid P_2) \cdot P(P_2) + P(D \mid P_3) \cdot P(P_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(D) = (0.005 \cdot 0.40) + (0.01 \cdot 0.35) + (0.02 \cdot 0.25) = 0.002 + 0.0035 + 0.005 = 0.0105
+\]
+
+Ahora, calculamos \( P(P_3 \mid D) \):
+
+\[
+P(P_3 \mid D) = \frac{0.02 \cdot 0.25}{0.0105} = \frac{0.005}{0.0105} \approx 0.476
+\]
+
+Por lo tanto, la probabilidad de que una materia prima defectuosa haya sido suministrada por \( P_3 \) es aproximadamente \( 0.476 \), o 47.6\%.
+
+\newpage 
+\section*{problema 17}
+En una fábrica, tres máquinas \( M_1 \), \( M_2 \) y \( M_3 \) producen el 25 \%, 35 \% y 40 \% de los productos, respectivamente. La probabilidad de que un producto sea defectuoso es 0.01 si es producido por \( M_1 \), 0.02 si es producido por \( M_2 \) y 0.04 si es producido por \( M_3 \). Se pide calcular la probabilidad de que un producto defectuoso haya sido producido por \( M_3 \).
+
+\subsection*{Solución}
+
+\begin{itemize}
+    \item \( P(M_1) = 0.25 \)
+    \item \( P(M_2) = 0.35 \)
+    \item \( P(M_3) = 0.40 \)
+    \item \( P(D \mid M_1) = 0.01 \)
+    \item \( P(D \mid M_2) = 0.02 \)
+    \item \( P(D \mid M_3) = 0.04 \)
+\end{itemize}
+
+Queremos encontrar \( P(M_3 \mid D) \), que se calcula utilizando el teorema de Bayes:
+
+\[
+P(M_3 \mid D) = \frac{P(D \mid M_3) \cdot P(M_3)}{P(D)}
+\]
+
+Donde \( P(D) \) es:
+
+\[
+P(D) = P(D \mid M_1) \cdot P(M_1) + P(D \mid M_2) \cdot P(M_2) + P(D \mid M_3) \cdot P(M_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(D) = (0.01 \cdot 0.25) + (0.02 \cdot 0.35) + (0.04 \cdot 0.40) = 0.0025 + 0.007 + 0.016 = 0.0255
+\]
+
+Ahora, calculamos \( P(M_3 \mid D) \):
+
+\[
+P(M_3 \mid D) = \frac{0.04 \cdot 0.40}{0.0255} = \frac{0.016}{0.0255} \approx 0.627
+\]
+
+Por lo tanto, la probabilidad de que un producto defectuoso haya sido producido por \( M_3 \) es aproximadamente \( 0.627 \), o 62.7\%.
+
+\newpage 
+\section*{problema 18}
+Un aeropuerto tiene tres pistas de aterrizaje \( P_1 \), \( P_2 \) y \( P_3 \). La probabilidad de que un avión aterrice en \( P_1 \) es 0.4, en \( P_2 \) es 0.3 y en \( P_3 \) es 0.3. La probabilidad de que un avión aterrice de manera segura es 0.99 en \( P_1 \), 0.98 en \( P_2 \) y 0.97 en \( P_3 \). Se pide calcular la probabilidad de que un aterrizaje seguro haya ocurrido en \( P_2 \).
+
+\subsection*{Solución}
+
+\begin{itemize}
+    \item \( P(P_1) = 0.4 \)
+    \item \( P(P_2) = 0.3 \)
+    \item \( P(P_3) = 0.3 \)
+    \item \( P(S \mid P_1) = 0.99 \)
+    \item \( P(S \mid P_2) = 0.98 \)
+    \item \( P(S \mid P_3) = 0.97 \)
+\end{itemize}
+
+Queremos encontrar \( P(P_2 \mid S) \), que se calcula utilizando el teorema de Bayes:
+
+\[
+P(P_2 \mid S) = \frac{P(S \mid P_2) \cdot P(P_2)}{P(S)}
+\]
+
+Donde \( P(S) \) es:
+
+\[
+P(S) = P(S \mid P_1) \cdot P(P_1) + P(S \mid P_2) \cdot P(P_2) + P(S \mid P_3) \cdot P(P_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(S) = (0.99 \cdot 0.4) + (0.98 \cdot 0.3) + (0.97 \cdot 0.3) = 0.396 + 0.294 + 0.291 = 0.981
+\]
+
+Ahora, calculamos \( P(P_2 \mid S) \):
+
+\[
+P(P_2 \mid S) = \frac{0.98 \cdot 0.3}{0.981} = \frac{0.294}{0.981} \approx 0.2997
+\]
+
+Por lo tanto, la probabilidad de que un aterrizaje seguro haya ocurrido en \( P_2 \) es aproximadamente \( 0.2997 \), o 29.97\%.
+
+\newpage 
+\section*{problema 19}
+Una empresa tiene tres fábricas \( F_1 \), \( F_2 \) y \( F_3 \) que producen el 20 \%, 30 \% y 50 \% de los productos, respectivamente. Las probabilidades de que un producto sea defectuoso si es producido por \( F_1 \), \( F_2 \) y \( F_3 \) son 0.03, 0.02 y 0.01, respectivamente. Se pide calcular la probabilidad de que un producto defectuoso haya sido producido por \( F_1 \).
+
+\subsection*{Solución}
+
+\begin{itemize}
+    \item \( P(F_1) = 0.20 \)
+    \item \( P(F_2) = 0.30 \)
+    \item \( P(F_3) = 0.50 \)
+    \item \( P(D \mid F_1) = 0.03 \)
+    \item \( P(D \mid F_2) = 0.02 \)
+    \item \( P(D \mid F_3) = 0.01 \)
+\end{itemize}
+
+Queremos encontrar \( P(F_1 \mid D) \), que se calcula utilizando el teorema de Bayes:
+
+\[
+P(F_1 \mid D) = \frac{P(D \mid F_1) \cdot P(F_1)}{P(D)}
+\]
+
+Donde \( P(D) \) es:
+
+\[
+P(D) = P(D \mid F_1) \cdot P(F_1) + P(D \mid F_2) \cdot P(F_2) + P(D \mid F_3) \cdot P(F_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(D) = (0.03 \cdot 0.20) + (0.02 \cdot 0.30) + (0.01 \cdot 0.50) = 0.006 + 0.006 + 0.005 = 0.017
+\]
+
+Ahora, calculamos \( P(F_1 \mid D) \):
+
+\[
+P(F_1 \mid D) = \frac{0.03 \cdot 0.20}{0.017} = \frac{0.006}{0.017} \approx 0.3529
+\]
+
+Por lo tanto, la probabilidad de que un producto defectuoso haya sido producido por \( F_1 \) es aproximadamente \( 0.3529 \), o 35.29\%.
+\newpage
+\section*{problema 20}
+Un supermercado tiene tres cajas registradoras \( R_1 \), \( R_2 \) y \( R_3 \) que procesan el 30 \%, 40 \% y 30 \% de las compras, respectivamente. La probabilidad de que haya un error en el registro es 0.002 en \( R_1 \), 0.003 en \( R_2 \) y 0.005 en \( R_3 \). Se pide calcular la probabilidad de que, si se encuentra un error en una transacción, este haya ocurrido en \( R_3 \).
+
+\subsection*{Solución}
+
+\begin{itemize}
+    \item \( P(R_1) = 0.30 \)
+    \item \( P(R_2) = 0.40 \)
+    \item \( P(R_3) = 0.30 \)
+    \item \( P(E \mid R_1) = 0.002 \)
+    \item \( P(E \mid R_2) = 0.003 \)
+    \item \( P(E \mid R_3) = 0.005 \)
+\end{itemize}
+
+Queremos encontrar \( P(R_3 \mid E) \), que se calcula utilizando el teorema de Bayes:
+
+\[
+P(R_3 \mid E) = \frac{P(E \mid R_3) \cdot P(R_3)}{P(E)}
+\]
+
+Donde \( P(E) \) es:
+
+\[
+P(E) = P(E \mid R_1) \cdot P(R_1) + P(E \mid R_2) \cdot P(R_2) + P(E \mid R_3) \cdot P(R_3)
+\]
+
+Sustituyendo los valores:
+
+\[
+P(E) = (0.002 \cdot 0.30) + (0.003 \cdot 0.40) + (0.005 \cdot 0.30) = 0.0006 + 0.0012 + 0.0015 = 0.0033
+\]
+
+Ahora, calculamos \( P(R_3 \mid E) \):
+
+\[
+P(R_3 \mid E) = \frac{0.005 \cdot 0.30}{0.0033} = \frac{0.0015}{0.0033} \approx 0.455
+\]
+
+Por lo tanto, la probabilidad de que, si se encuentra un error en una transacción, este haya ocurrido en \( R_3 \) es aproximadamente \( 0.455 \), o 45.5\%.
+
 \end{document}
+
